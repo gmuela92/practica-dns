@@ -1,0 +1,28 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+//Zona
+zone	"a01.daw.com"{
+	type master;
+	file "/etc/bind/db.a01.daw.com";
+};
+
+
+
+//Zona delegada A MI
+zone	"a01.a02.daw.com"{
+	type master;
+	file "/etc/bind/db.a01.a02.daw.com";
+};
+
+
+//Busquedas inversas
+zone "201.3.168.192.in-addr.arpa"{
+	type master;
+	file "/etc/bind/db.192.168.3.201";
+};
